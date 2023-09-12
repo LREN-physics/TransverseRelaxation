@@ -10,7 +10,7 @@ Classically, the MRI transverse relaxation decay is analyzed by fitting the sign
 
 We highlight three different analytical descriptions of the signal decay that account for the transient regime of the transverse relaxation decay: the Anderson and Weiss, 1953 model (AW), the Sukstanskii and Yablonskiy, 2003 model (SY), and following a Padé approximation (Padé) of the transition from Gaussian to exponential decay.
 
-This repository aims at exploring the non-exponential MRI transverse relaxation. The implemented code employs a dictionary-based fitting approach to analyze the transverse relaxation data voxel-wise. The fitting routine with AW, SY, or Padé methods involves estimating the following parameters:
+This repository aims to explore the non-exponential MRI transverse relaxation. The implemented code employs a dictionary-based fitting approach to analyze the transverse relaxation data voxel-wise. The fitting routine with AW, SY, or Padé methods involves estimating the following parameters:
 
 &nbsp; **$\sqrt{<\Omega^2>}$**: mean square frequency deviation due to the field inhomogeneities induced by the magnetic material, pertains to the Gaussian behaviour at short echo times [ms<sup>-2</sup>]  
 &nbsp; **$R^\*_{2,micro}$**: effective transverse relaxation rate resulting from processes on the microscale, pertains to the exponential behaviour at long echo times [ms<sup>-1</sup>]  
@@ -40,7 +40,7 @@ The required data is:
 - Multi-echo gradient-echo data: one magnitude nifty (.nii) file per echo time. Multiple repetitions may exist and should be organized in different folders. The description field of the header of the images contains the corresponding TE at which the image was acquired, which will be needed in the fitting routine.  
 - nf: value corresponding to the noise floor level. In our work, nf corresponds to the noncentrality parameter of a Rician distribution fitted to the background signal.  
 
-Example data can be found in our online repository: ZENODO LINK, along with a comprehensive description of the provided data.  
+Example data can be found in our online [repository](https://doi.org/10.5281/zenodo.8338046), along with a comprehensive description of the provided data.  
 
 ### How to use
 
