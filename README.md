@@ -3,8 +3,8 @@
 ## Introduction
 
 This repository includes the original analysis code used to compile the results presented in the scientific publication:  
-Non-exponential transverse relaxation decay in subcortical grey matter  
-Rita Oliveira, Quentin Raynaud, Valerij Kiselev, Ileana Jelescu, Antoine Lutti
+*Non-exponential transverse relaxation decay in subcortical grey matter*   
+*Rita Oliveira, Quentin Raynaud, Valerij Kiselev, Ileana Jelescu, Antoine Lutti*
 
 Classically, the MRI transverse relaxation decay is analyzed by fitting the signal decay over echo time voxel-wise with a monoexponential function (Exp), for which a decay rate $R^\*_{2}$ is estimated. However, the presence of magnetic material within the tissue, such as iron-loaded cells, myelin, or blood vessels, introduces variations in the magnetic field, which can modify the exponential behaviour of the decay (1,2). In such inhomogeneous magnetic fields, the theory predicts a transient regime starting with a Gaussian behaviour at short echo times and approaching a monoexponential relaxation at long echo times (1,3–6).
 
@@ -12,20 +12,20 @@ We highlight three different analytical descriptions of the signal decay that ac
 
 This repository aims at exploring the non-exponential MRI transverse relaxation. The implemented code employs a dictionary-based fitting approach to analyze the transverse relaxation data voxel-wise. The fitting routine with AW, SY, or Padé methods involves estimating the following parameters:
 
-**$\sqrt{<\Omega^2>}$**: mean square frequency deviation due to the field inhomogeneities induced by the magnetic material, pertains to the Gaussian behaviour at short echo times [ms<sup>-2</sup>]  
-**$R^\*_{2,micro}$**: effective transverse relaxation rate resulting from processes on the microscale, pertains to the exponential behaviour at long echo times [ms<sup>-1</sup>]  
-**$S_0$**: initial signal amplitude  
-**$T_{2,mol}$**: inverse of effective transverse relaxation rate resulting from processes on the nanoscale [ms]  
+&nbsp; **$\sqrt{<\Omega^2>}$**: mean square frequency deviation due to the field inhomogeneities induced by the magnetic material, pertains to the Gaussian behaviour at short echo times [ms<sup>-2</sup>]  
+&nbsp; **$R^\*_{2,micro}$**: effective transverse relaxation rate resulting from processes on the microscale, pertains to the exponential behaviour at long echo times [ms<sup>-1</sup>]  
+&nbsp; **$S_0$**: initial signal amplitude  
+&nbsp; **$T_{2,mol}$**: inverse of effective transverse relaxation rate resulting from processes on the nanoscale [ms]  
 
 Additionally, this code allows the user to estimate tissue properties associated with the different regimes that describe the transverse relaxation decay. The regimes considered are the SDR (static dephasing regime) and DNR (diffusion narrowing regime). In the SDR (5), water diffusion is minimal and spin dephasing is caused primarily by the static magnetic field inhomogeneities. Conversely, in the DNR (3,4), fast molecular diffusion dominates the spin-dephasing process. We combined the estimated parameters $R^\*_{2,micro}$ and $\sqrt{<\Omega^2>}$ and calculate:
 
 &nbsp; under the assumption of SDR:  
-    **$\Delta\chi$**: difference in susceptibility of the magnetic inclusions to the surrounding tissue [addimentional, in ppm and in SI units]  
-    **$\zeta$**: volume fraction of the magnetic inclusions [addimentional]
+   &nbsp; **$\Delta\chi$**: difference in susceptibility of the magnetic inclusions to the surrounding tissue [addimentional, in ppm and in SI units]  
+   &nbsp; **$\zeta$**: volume fraction of the magnetic inclusions [addimentional]
 
 &nbsp; under the assumption of DNR:  
-    **$\alpha = \tau \sqrt{<\Omega^2>}$** [addimentional]  
-    **$\tau$**: time scale for water molecules to diffuse away from magnetic inclusions [ms]
+    &nbsp; **$\alpha = \tau \sqrt{<\Omega^2>}$** [addimentional]  
+    &nbsp; **$\tau$**: time scale for water molecules to diffuse away from magnetic inclusions [ms]
 
  ## Getting Started
 
@@ -58,7 +58,7 @@ Example data can be found in our online repository: ZENODO LINK, along with a co
 -	SY (Sukstanskii & Yablonskiy Model)  
 -	Padé (Padé Signal Representation)
 
-At the end of this analysis, the user will have maps of $R^\ast_{2}$ if using the exponential model. Maps of $R^\ast_{2,micro}$ and $\sqrt{<\Omega^2>}$ will be created if using the AW, SY or Padé models.   
+At the end of this analysis, the user will have maps of $R^\ast_{2}$ if using the exponential model. Maps of $R^\ast_{2,micro}$ and $\sqrt{<\Omega^2>}$ will be created if using the AW, SY or Padé models. 
 From the $R^\ast_{2,micro}$ and $\sqrt{<\Omega^2>}$, maps of $\Delta\chi$ and $\zeta$ under the assumption of SDR, and $\alpha$ and $\tau$ under the assumption of DNR are also computed.  
 
 If no argument is given, the analysis is run with the data from ‘sub-01’ to ‘sub-05’ and with the four methods above ‘Exp’, ‘AW’, ‘SY’, and ‘Padé’.  
