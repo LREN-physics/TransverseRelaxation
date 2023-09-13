@@ -62,7 +62,7 @@ At the end of this analysis, the user will have maps of $R^\ast_{2}$ if using th
 From the $R^\ast_{2,micro}$ and $\sqrt{<\Omega^2>}$, maps of $\Delta\chi$ and $\zeta$ under the assumption of SDR, and $\alpha$ and $\tau$ under the assumption of DNR are also computed.  
 
 If no argument is given, the analysis is run with the data from ‘sub-01’ to ‘sub-05’ and with the four methods above ‘Exp’, ‘AW’, ‘SY’, and ‘Padé’.  
-Other additional files will be created during this routine, such as mean square error maps or the $S_0$ map. Please refer to the data description (ZENODO LINK) or Matlab scripts for more information on those files.
+Other additional files will be created during this routine, such as mean square error maps or the $S_0$ map. Please refer to the data description (available online [here](https://doi.org/10.5281/zenodo.8338046)) or Matlab scripts for more information on those files.
 
 **TransverseRelaxation**: script that runs all the analysis. Includes:  
 
